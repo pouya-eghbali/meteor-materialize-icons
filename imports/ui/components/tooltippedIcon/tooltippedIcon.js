@@ -2,7 +2,7 @@
 import { Template } from 'meteor/templating'
 import '../materialIcon/materialIcon'
 import './tooltippedIcon.html'
-import { FlowRouter } from 'meteor/kadira:flow-router'
+import { FlowRouter } from 'meteor/ostrio:flow-router-extra'
 import { ReactiveVar } from 'meteor/reactive-var'
 
 // on created
@@ -45,7 +45,7 @@ Template.tooltippedIcon.onCreated(() => {
   }
 
   // assign icon
-  instance.icon = instance.data.icon?instance.data.icon:'polymer'
+  instance.icon = instance.data.icon ? instance.data.icon : 'polymer'
 
   // init attributes
   instance.iconAttr = {}
@@ -87,11 +87,11 @@ Template.tooltippedIcon.helpers({
   tooltipAttr() {
     const instance = Template.instance()
     const classes = 'tooltipped disable-selection'
-    instance.tooltipAttr['class'] = instance.data.tooltipClass?
-        instance.data.tooltipClass+' '+classes:classes
+    instance.tooltipAttr['class'] = instance.data.tooltipClass ?
+      instance.data.tooltipClass + ' ' + classes : classes
     instance.tooltipAttr['data-tooltip'] = instance.text.get()
-    instance.tooltipAttr['data-position'] = instance.data.position?
-        instance.data.position:'top'
+    instance.tooltipAttr['data-position'] = instance.data.position ?
+      instance.data.position : 'top'
     if (instance.link) {
       instance.tooltipAttr.style = `cursor: pointer;`
     }

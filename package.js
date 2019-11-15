@@ -5,13 +5,13 @@ Package.describe({
   git: 'https://github.com/mozfet/meteor-autoform-materialize-icons.git'
 });
 
-Package.onUse(function(api) {
+Package.onUse(function (api) {
   api.versionsFrom('METEOR@1.4');
   api.use([
     'templating',
     'blaze',
     'underscore',
-    'kadira:flow-router@2.12.1'
+    'ostrio:flow-router-extra'
   ], 'client');
   api.use('ecmascript');
   api.addFiles([
